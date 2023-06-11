@@ -9,13 +9,14 @@ import java.util.List;
  */
 public class JogoPlataforma {
     
-    private BigDecimal precoDiario;
+    private double precoDiario;
     private List<Jogo> jogos;
     private List<Plataforma> plataformas;
+    private List<ItemLocacao> locacoes;
     
     public double calcularPrecoDiario(){
         for(Plataforma plataforma : plataformas){
-            this.precoDiario += plataforma.precoDiario();
+            this.precoDiario += plataforma.precoDiario().doubleValue();
         }
         return this.precoDiario;
     }

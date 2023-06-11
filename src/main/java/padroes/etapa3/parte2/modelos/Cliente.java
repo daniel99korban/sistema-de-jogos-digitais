@@ -14,4 +14,5 @@ public class Cliente {
     private String telefone;
     private String senha;
     private List<Locacao> locacoes;
+    private List<UtilizacaoDoConsolePeloCliente> utilizacoes;
 }

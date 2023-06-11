@@ -8,4 +8,5 @@ package padroes.etapa3.parte2.modelos;
 public class Acessorio {
     private Integer id;
     private String nome;
+    private Console console;
 }

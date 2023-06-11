@@ -14,4 +14,9 @@ public class Console {
     private BigDecimal precoPorHora;
     private List<Acessorio> acessorios;
     private List<UtilizacaoDoConsolePeloCliente> utilizacoes;
+
+    public Console(List<Acessorio> acessorios) {
+        this.acessorios = acessorios;
+    }
+    
 }

@@ -10,6 +10,6 @@ import java.util.List;
 public class ItemLocacao {
     private Integer dias;
     private Integer quantidade;
-    private List<JogoPlataforma> jogosPlataformas;
+    private List<JogoPlataforma> jogosEPlataformas;
     private List<Locacao> locacoes;
 }

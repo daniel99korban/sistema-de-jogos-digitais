@@ -15,7 +15,7 @@ public class PlataformaPc extends Plataforma{
     
     @Override
     public BigDecimal precoDiario() {
-        return 0;
+        return new BigDecimal(0);
     }
     
 }

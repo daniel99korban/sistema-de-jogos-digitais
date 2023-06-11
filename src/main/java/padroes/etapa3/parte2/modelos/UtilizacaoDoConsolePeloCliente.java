@@ -11,4 +11,6 @@ public class UtilizacaoDoConsolePeloCliente {
     private Integer id;
     private LocalDateTime inicio;
     private LocalDateTime fim;
+    private Cliente cliente;
+    private Console console;
 }

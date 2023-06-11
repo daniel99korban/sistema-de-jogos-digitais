@@ -1,6 +1,7 @@
 
 package padroes.etapa3.parte2.modelos;
 
+import java.math.BigDecimal;
 import padroes.etapa3.parte2.modelos.Plataforma;
 
 /**
@@ -15,7 +16,7 @@ public class PlataformaPs4 extends Plataforma{
 
     @Override
     public BigDecimal precoDiario() {
-        return 0;
+        return new BigDecimal(0);
     }
     
 }
