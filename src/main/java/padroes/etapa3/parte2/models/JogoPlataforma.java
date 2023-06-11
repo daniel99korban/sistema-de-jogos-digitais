@@ -1,24 +1,33 @@
 
-package padroes.etapa3.parte2.modelos;
+package padroes.etapa3.parte2.models;
 
-import java.math.BigDecimal;
 import java.util.List;
+import padroes.etapa3.parte2.repository.Entity;
 /**
  *
  * @author danie
  */
-public class JogoPlataforma {
+public class JogoPlataforma extends Entity{
     
     private double precoDiario;
     private List<Jogo> jogos;
     private List<Plataforma> plataformas;
     private List<ItemLocacao> locacoes;
+
+    public JogoPlataforma(Integer id) {
+        super(id);
+    }
     
     public double calcularPrecoDiario(){
         for(Plataforma plataforma : plataformas){
             this.precoDiario += plataforma.precoDiario().doubleValue();
         }
         return this.precoDiario;
+    }
+
+    @Override
+    public String toString() {
+        return "JogoPlataforma{" + "id=" + this.getId() + ", precoDiario=" + precoDiario + ", jogos=" + jogos + ", plataformas=" + plataformas + ", locacoes=" + locacoes + '}';
     }
     
 }
