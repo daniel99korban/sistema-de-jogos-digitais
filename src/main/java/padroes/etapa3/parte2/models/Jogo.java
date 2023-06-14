@@ -12,16 +12,25 @@ public class Jogo extends Entity{
     private String titulo;
     private List<JogoPlataforma> plataformas;
 
-    public Jogo(String titulo, List<JogoPlataforma> plataformas, Integer id) {
+    public Jogo(Integer id) {
         super(id);
+    }
+
+    public String getTitulo() {
+        return titulo;
+    }
+
+    public void setTitulo(String titulo) {
         this.titulo = titulo;
+    }
+
+    public List<JogoPlataforma> getPlataformas() {
+        return plataformas;
+    }
+
+    public void setPlataformas(List<JogoPlataforma> plataformas) {
         this.plataformas = plataformas;
     }
-    
-    
-//    public Jogo(Integer id) {
-//        super(id);
-//    }
 
     @Override
     public String toString() {
