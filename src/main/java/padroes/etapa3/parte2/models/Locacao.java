@@ -23,7 +23,4 @@ public class Locacao extends Entity{
         return "Locacao{" + "id=" + this.getId() + ", data=" + data + ", itens=" + itens + ", cliente=" + cliente + '}';
     }
     
-    
-    
-    
 }

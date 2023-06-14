@@ -4,31 +4,31 @@ package padroes.etapa3.parte2.repository;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
-import padroes.etapa3.parte2.models.Cliente;
+import padroes.etapa3.parte2.models.Console;
 import padroes.etapa3.parte2.models.Entity;
 
 /**
  *
  * @author daniel korban
  */
-public class ClienteRepository extends Repository{
+public class ConsoleRepository extends Repository{
 
     @Override
     public List<Entity> buscarTodos() {
-        List<Entity> clientes = new ArrayList<>();
+        List<Entity> consoles = new ArrayList<>();
          // Iterando sobre os elementos para obter apenas os clientes
         for (Map.Entry<Integer, Entity> registros : super.conexao.entrySet()) {
-            if(registros.getValue() instanceof Cliente){
-                clientes.add(registros.getValue());
+            if(registros.getValue() instanceof Console){
+                consoles.add(registros.getValue());
             }
         }
-        return clientes;
+        return consoles;
     }
 
     @Override
     public Entity recuperar(int id) {
         for(Map.Entry<Integer,Entity> registro : super.conexao.entrySet()) {
-           if(registro.getValue() instanceof Cliente && registro.getValue().getId() == id){
+           if(registro.getValue() instanceof Console && registro.getValue().getId() == id){
                return registro.getValue();
            }
         }
@@ -43,7 +43,7 @@ public class ClienteRepository extends Repository{
     @Override
     public void atualizar(Entity entity) {
         for(Map.Entry<Integer,Entity> registro : super.conexao.entrySet()) {
-          if(registro.getValue() instanceof Cliente && registro.getValue().getId() == entity.getId()){
+          if(registro.getValue() instanceof Console && registro.getValue().getId() == entity.getId()){
               super.conexao.put(registro.getValue().getId(), entity);
           }
         }
@@ -51,11 +51,11 @@ public class ClienteRepository extends Repository{
 
     @Override
     public void excluirPorNome(Entity entity) {
-        Cliente cliente = (Cliente) entity;
+        Console console = (Console) entity;
         for(Map.Entry<Integer,Entity> registro : super.conexao.entrySet()) {
-            if(registro.getValue() instanceof Cliente){
-                Cliente clienteExcluido = (Cliente) registro.getValue();
-                if(clienteExcluido.getNome().equals(cliente.getNome())){
+            if(registro.getValue() instanceof Console){
+                Console consoleExcluido = (Console) registro.getValue();
+                if(consoleExcluido.getNome().equals(console.getNome())){
                     super.conexao.remove(registro);
                     break;
                 }
@@ -66,11 +66,11 @@ public class ClienteRepository extends Repository{
     @Override
     public void excluirPorId(int id) {
         for(Map.Entry<Integer,Entity> registro : super.conexao.entrySet()) {
-            if(registro.getValue() instanceof Cliente && registro.getValue().getId() == id){
+            if(registro.getValue() instanceof Console && registro.getValue().getId() == id){
                 super.conexao.remove(registro);
                 break;
             }
         }
     }
-   
+    
 }

@@ -8,7 +8,7 @@ import java.util.List;
  *
  * @author danie
  */
-abstract class Plataforma extends Entity{//(Xbox, PS3, PS4, PC, etc.).
+public abstract class Plataforma extends Entity{//(Xbox, PS3, PS4, PC, etc.).
     
     private String nome;
     private List<JogoPlataforma> jogos;

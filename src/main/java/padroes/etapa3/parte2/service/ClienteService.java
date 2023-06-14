@@ -2,13 +2,12 @@
 package padroes.etapa3.parte2.service;
 
 import java.util.List;
-import padroes.etapa3.parte2.models.Cliente;
 import padroes.etapa3.parte2.models.Entity;
 import padroes.etapa3.parte2.repository.ClienteRepository;
 
 /**
  *
- * @author danie
+ * @author daniel korban
  */
 public class ClienteService {// camada servico
     
