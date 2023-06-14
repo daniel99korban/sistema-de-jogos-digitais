@@ -21,4 +21,24 @@ public class ClienteService {// camada servico
         return clienteRepository.buscarTodos();
     }
     
+    public Entity recuperar(int id){
+        return clienteRepository.recuperar(id);
+    }
+    
+    public void cadastrar(Entity entity){
+        clienteRepository.cadastrar(entity);
+    }
+    
+    public void atualizar(Entity entity){
+        clienteRepository.atualizar(entity);
+    }
+    
+    public void excluirPorNome(Entity entity){
+        clienteRepository.excluirPorNome(entity);
+    }
+    
+    public void excluirPorId(int id){
+        clienteRepository.excluirPorId(id);
+    }
+    
 }
