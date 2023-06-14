@@ -1,5 +1,5 @@
  
-package padroes.etapa3.parte2.repository;
+package padroes.etapa3.parte2.models;
 
 /**
  *

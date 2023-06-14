@@ -1,8 +1,6 @@
 
 package padroes.etapa3.parte2.models;
 
-import padroes.etapa3.parte2.repository.Entity;
-
 /**
  *
  * @author danie

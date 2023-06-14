@@ -3,7 +3,6 @@ package padroes.etapa3.parte2.models;
 
 import java.math.BigDecimal;
 import java.util.List;
-import padroes.etapa3.parte2.repository.Entity;
 
 /**
  *

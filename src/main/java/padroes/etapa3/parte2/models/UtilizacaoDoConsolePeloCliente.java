@@ -2,7 +2,6 @@
 package padroes.etapa3.parte2.models;
 
 import java.time.LocalDateTime;
-import padroes.etapa3.parte2.repository.Entity;
 
 /**
  *
