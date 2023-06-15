@@ -1,14 +1,14 @@
 
-package padroes.etapa3.parte2.repository;
+package padroes.etapa3.parte2.domain.repository;
 
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
-import padroes.etapa3.parte2.models.Entity;
-import padroes.etapa3.parte2.models.Plataforma;
-import padroes.etapa3.parte2.models.PlataformaPc;
-import padroes.etapa3.parte2.models.PlataformaPs4;
-import padroes.etapa3.parte2.models.PlataformaXbox;
+import padroes.etapa3.parte2.domain.model.Entity;
+import padroes.etapa3.parte2.domain.model.Plataforma;
+import padroes.etapa3.parte2.domain.model.PlataformaPc;
+import padroes.etapa3.parte2.domain.model.PlataformaPs4;
+import padroes.etapa3.parte2.domain.model.PlataformaXbox;
 
 /**
  *

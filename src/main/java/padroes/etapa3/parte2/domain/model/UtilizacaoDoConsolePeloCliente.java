@@ -1,5 +1,5 @@
 
-package padroes.etapa3.parte2.models;
+package padroes.etapa3.parte2.domain.model;
 
 import java.time.LocalDateTime;
 
@@ -23,6 +23,16 @@ public class UtilizacaoDoConsolePeloCliente extends Entity{
         return "UtilizacaoDoConsolePeloCliente{" + "id=" + super.getId() + ", inicio=" + inicio + ", fim=" + fim + ", cliente=" + cliente + ", console=" + console + '}';
     }
     
+    //getters e setters
+
+    public void setCliente(Cliente cliente) {
+        this.cliente = cliente;
+    }
+
+    public void setConsole(Console console) {
+        this.console = console;
+    }
+    
     public abstract class Builder{
         
         private UtilizacaoDoConsolePeloCliente utilizacoes;
@@ -43,11 +53,13 @@ public class UtilizacaoDoConsolePeloCliente extends Entity{
         
         public Builder cliente(Cliente cliente){
             this.utilizacoes.cliente = cliente;
+            cliente.adicionarUtilizacao(utilizacoes);
             return this;
         }
         
         public Builder console(Console console){
             this.utilizacoes.console = console;
+            console.adicionarUtilizacao(utilizacoes);
             return this;
         }
 

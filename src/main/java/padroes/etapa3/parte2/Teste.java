@@ -1,6 +1,5 @@
 
 package padroes.etapa3.parte2;
-import padroes.etapa3.parte2.models.*;
 
 /**
  *

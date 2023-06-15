@@ -1,12 +1,12 @@
 
-package padroes.etapa3.parte2.models;
+package padroes.etapa3.parte2.domain.model;
 
 import java.math.BigDecimal;
 import java.util.List;
 
 /**
  *
- * @author danie
+ * @author daniel korban & Pedro Ivo
  */
 public class Console extends Entity{
     
@@ -23,7 +23,7 @@ public class Console extends Entity{
         super(id);
         this.acessorios = acessorios;
     }
-
+    // getters e setters
     public String getNome() {
         return nome;
     }
@@ -54,6 +54,11 @@ public class Console extends Entity{
 
     public void setUtilizacoes(List<UtilizacaoDoConsolePeloCliente> utilizacoes) {
         this.utilizacoes = utilizacoes;
+    }
+    
+    public void adicionarUtilizacao(UtilizacaoDoConsolePeloCliente utilizacao){
+        this.utilizacoes.add(utilizacao);
+        utilizacao.setConsole(this);
     }
     
     @Override

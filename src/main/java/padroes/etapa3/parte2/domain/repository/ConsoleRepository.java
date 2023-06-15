@@ -1,11 +1,11 @@
 
-package padroes.etapa3.parte2.repository;
+package padroes.etapa3.parte2.domain.repository;
 
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
-import padroes.etapa3.parte2.models.Console;
-import padroes.etapa3.parte2.models.Entity;
+import padroes.etapa3.parte2.domain.model.Console;
+import padroes.etapa3.parte2.domain.model.Entity;
 
 /**
  *

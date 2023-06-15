@@ -1,11 +1,11 @@
 
-package padroes.etapa3.parte2.models;
+package padroes.etapa3.parte2.domain.model;
 
 import java.util.ArrayList;
 import java.util.List;
 /**
  *
- * @author danie
+ * @author daniel korban e Pedro Ivo
  */
 public class JogoPlataforma extends Entity{
     
@@ -52,6 +52,15 @@ public class JogoPlataforma extends Entity{
     public void adicionarJogo(Jogo jogo){
         this.jogos.add(jogo);
         jogo.adicionarReferenciaJogoPlataformaEmJogo(this);
+    }
+    // metodo usado apenas para indicar relacionamento entro os objetos
+    public void adicionarReferenciaItemLocacaoEmJogoPlataforma(ItemLocacao itemLocacao){
+        this.locacoes.add(itemLocacao);
+    }
+    
+    public void adicionarItemLocacao(ItemLocacao itemLocacao){
+        this.locacoes.add(itemLocacao);
+        itemLocacao.adicionarReferenciaJogoPlataformaEmItemLocacao(this);
     }
     
     @Override

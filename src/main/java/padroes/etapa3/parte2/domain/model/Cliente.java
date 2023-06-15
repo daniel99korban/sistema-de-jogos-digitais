@@ -1,5 +1,5 @@
 
-package padroes.etapa3.parte2.models;
+package padroes.etapa3.parte2.domain.model;
 
 import java.util.List;
 
@@ -49,6 +49,16 @@ public class Cliente extends Entity{
         return utilizacoes;
     }
     
+    public void adicionarLocacao(Locacao locacao){
+        this.locacoes.add(locacao);
+        locacao.setCliente(this);
+    }
+    
+    public void adicionarUtilizacao(UtilizacaoDoConsolePeloCliente utilizacao){
+        this.utilizacoes.add(utilizacao);
+        utilizacao.setCliente(this);
+    }
+    
 
     //padrao step build
     public static class Builder{
@@ -76,16 +86,6 @@ public class Cliente extends Entity{
 
         public Builder senha(String senha) {
             this.cliente.senha = senha;
-            return this;
-        }
-
-        public Builder locacoes(List<Locacao> locacoes) {
-            this.cliente.locacoes = locacoes;
-            return this;
-        }
-
-        public Builder utilizacoes(List<UtilizacaoDoConsolePeloCliente> utilizacoes) {
-            this.cliente.utilizacoes = utilizacoes;
             return this;
         }
         

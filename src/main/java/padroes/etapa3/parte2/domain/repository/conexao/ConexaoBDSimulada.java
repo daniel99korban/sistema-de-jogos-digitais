@@ -1,9 +1,9 @@
 
-package padroes.etapa3.parte2.repository.conexao;
+package padroes.etapa3.parte2.domain.repository.conexao;
 
 import java.util.HashMap;
 import java.util.Map;
-import padroes.etapa3.parte2.models.Entity;
+import padroes.etapa3.parte2.domain.model.Entity;
 
 /**
  *

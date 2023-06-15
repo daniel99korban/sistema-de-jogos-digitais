@@ -1,5 +1,5 @@
 
-package padroes.etapa3.parte2.models;
+package padroes.etapa3.parte2.domain.model;
 
 import java.math.BigDecimal;
 import java.util.ArrayList;
