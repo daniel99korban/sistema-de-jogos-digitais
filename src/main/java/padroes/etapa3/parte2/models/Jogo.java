@@ -12,24 +12,8 @@ public class Jogo extends Entity{
     private String titulo;
     private List<JogoPlataforma> plataformas;
 
-    public Jogo(Integer id) {
+    private Jogo(Integer id) {
         super(id);
-    }
-
-    public String getTitulo() {
-        return titulo;
-    }
-
-    public void setTitulo(String titulo) {
-        this.titulo = titulo;
-    }
-
-    public List<JogoPlataforma> getPlataformas() {
-        return plataformas;
-    }
-
-    public void setPlataformas(List<JogoPlataforma> plataformas) {
-        this.plataformas = plataformas;
     }
 
     @Override
@@ -37,4 +21,30 @@ public class Jogo extends Entity{
         return "\nJogo{\n\t" + "id=" + this.getId() + ",\n\ttitulo=" + titulo + ",\n\tplataformas=" + plataformas + "\n}";
     }
     
+    // step build
+    public static class Builder{
+        
+        private Jogo jogo;
+        
+        public Builder id(Integer id){
+            this.jogo = new Jogo(id);
+            return this;
+        }
+
+        public Builder titulo(String titulo) {
+            this.jogo.titulo = titulo;
+            return this;
+        }
+
+        public Builder plataformas(List<JogoPlataforma> plataformas) {
+            this.jogo.plataformas = plataformas;
+            return this;
+        }
+        
+        public Jogo build(){
+            return this.jogo;
+        }
+        
+    }
+
 }

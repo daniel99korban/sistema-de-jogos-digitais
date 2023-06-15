@@ -6,12 +6,12 @@ import padroes.etapa3.parte2.models.Plataforma;
 
 /**
  *
- * @author danie
+ * @author daniel korban e Pedro Ivo
  */
 public class PlataformaXbox extends Plataforma{
 
-    public PlataformaXbox(String nome, Integer id) {
-        super(nome, id);
+    public PlataformaXbox(Integer id) {
+        super(id);
     }
     
     @Override

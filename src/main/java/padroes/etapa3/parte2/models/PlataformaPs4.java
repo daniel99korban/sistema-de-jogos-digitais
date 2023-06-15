@@ -10,8 +10,8 @@ import padroes.etapa3.parte2.models.Plataforma;
  */
 public class PlataformaPs4 extends Plataforma{
 
-    public PlataformaPs4(String nome, Integer id) {
-        super(nome, id);
+    public PlataformaPs4(Integer id) {
+        super(id);
     }
     
     @Override

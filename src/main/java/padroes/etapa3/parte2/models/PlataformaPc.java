@@ -5,12 +5,12 @@ import java.math.BigDecimal;
 
 /**
  *
- * @author danie
+ * @author danie korban & Pedro ivo
  */
 public class PlataformaPc extends Plataforma{
 
-    public PlataformaPc(String nome, Integer id) {
-        super(nome, id);
+    public PlataformaPc(Integer id) {
+        super(id);
     }
     
     @Override

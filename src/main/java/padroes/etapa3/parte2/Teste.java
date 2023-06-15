@@ -1,12 +1,18 @@
 
 package padroes.etapa3.parte2;
 
+import padroes.etapa3.parte2.models.Jogo;
+
 /**
  *
  * @author danie
  */
 public class Teste {
     public static void main(String[] args) {
+        Jogo marioBros = Jogo.Builder(1)
+            .nome("Mario Bros")
+            .plataformas(null)
+            .build();
         // SIMULAR ESTES CENÁRIO:
         //Quando um cliente (nome, email,telefone, senha) deseja fazer uma locação, ele informa 
         //quais jogos ele quer locar, informando inclusive de qual plataforma é cada jogo contido 

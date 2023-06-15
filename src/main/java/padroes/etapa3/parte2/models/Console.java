@@ -61,4 +61,6 @@ public class Console extends Entity{
         return "Console{" + "id=" + this.getId() + ", nome=" + nome + ", precoPorHora=" + precoPorHora + ", acessorios=" + acessorios + ", utilizacoes=" + utilizacoes + '}';
     }
     
+    // step builder
+    
 }

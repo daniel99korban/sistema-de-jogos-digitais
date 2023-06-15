@@ -16,77 +16,82 @@ public class Cliente extends Entity{
     private List<Locacao> locacoes;
     private List<UtilizacaoDoConsolePeloCliente> utilizacoes;
 
-    public Cliente(Integer id) {
+    private Cliente(Integer id) {
         super(id);
-    }
-
-    public Cliente(String nome, String email, String telefone, String senha, List<Locacao> locacoes, List<UtilizacaoDoConsolePeloCliente> utilizacoes, Integer id) {
-        super(id);
-        this.nome = nome;
-        this.email = email;
-        this.telefone = telefone;
-        this.senha = senha;
-        this.locacoes = locacoes;
-        this.utilizacoes = utilizacoes;
-    }
-
-//    public Cliente(Integer id) {// como cliente é uma entidade ele herda o atributo Id e o metodo getId();;
-//        super(id);
-//    }
-
-    public String getNome() {
-        return nome;
-    }
-
-    public void setNome(String nome) {
-        this.nome = nome;
-    }
-
-    public String getEmail() {
-        return email;
-    }
-
-    public void setEmail(String email) {
-        this.email = email;
-    }
-
-    public String getTelefone() {
-        return telefone;
-    }
-
-    public void setTelefone(String telefone) {
-        this.telefone = telefone;
-    }
-
-    public String getSenha() {
-        return senha;
-    }
-
-    public void setSenha(String senha) {
-        this.senha = senha;
-    }
-
-    public List<Locacao> getLocacoes() {
-        return locacoes;
-    }
-
-    public void setLocacoes(List<Locacao> locacoes) {
-        this.locacoes = locacoes;
-    }
-
-    public List<UtilizacaoDoConsolePeloCliente> getUtilizacoes() {
-        return utilizacoes;
-    }
-
-    public void setUtilizacoes(List<UtilizacaoDoConsolePeloCliente> utilizacoes) {
-        this.utilizacoes = utilizacoes;
     }
 
     @Override
     public String toString() {
         return "\nCliente{" + "\n\tid=" + this.getId() + "\n\tnome=" + nome + ",\n\temail=" + email + ",\n\ttelefone=" + telefone + ",\n\tsenha=" + senha + ",\n\tlocacoes=" + locacoes + ",\n\tutilizacoes=" + utilizacoes + "\n}";
     }
+    // getters
+    public String getNome() {
+        return nome;
+    }
 
+    public String getEmail() {
+        return email;
+    }
+
+    public String getTelefone() {
+        return telefone;
+    }
+
+    public String getSenha() {
+        return senha;
+    }
+
+    public List<Locacao> getLocacoes() {
+        return locacoes;
+    }
+
+    public List<UtilizacaoDoConsolePeloCliente> getUtilizacoes() {
+        return utilizacoes;
+    }
     
-    
+
+    //padrao step build
+    public static class Builder{
+        
+        private Cliente cliente;
+        
+        public Builder(Integer id) {
+            cliente = new Cliente(id);
+        }
+ 
+        public Builder nome(String nome) {
+            this.cliente.nome = nome;
+            return this;
+        }
+
+        public Builder email(String email) {
+            this.cliente.email = email;
+            return this;
+        }
+
+        public Builder telefone(String telefone) {
+            this.cliente.telefone = telefone;
+            return this;
+        }
+
+        public Builder senha(String senha) {
+            this.cliente.senha = senha;
+            return this;
+        }
+
+        public Builder locacoes(List<Locacao> locacoes) {
+            this.cliente.locacoes = locacoes;
+            return this;
+        }
+
+        public Builder utilizacoes(List<UtilizacaoDoConsolePeloCliente> utilizacoes) {
+            this.cliente.utilizacoes = utilizacoes;
+            return this;
+        }
+        
+        public Cliente build(){
+            return this.cliente;
+        }
+
+    }
 }
