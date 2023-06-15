@@ -1,6 +1,7 @@
 
 package padroes.etapa3.parte2.models;
 
+import java.util.ArrayList;
 import java.util.List;
 /**
  *
@@ -15,6 +16,9 @@ public class JogoPlataforma extends Entity{
 
     public JogoPlataforma(Integer id) {
         super(id);
+        this.jogos = new ArrayList<>();
+        this.plataformas = new ArrayList<>();
+        this.locacoes = new ArrayList<>();
     }
     
     public double calcularPrecoDiario(){
@@ -24,37 +28,35 @@ public class JogoPlataforma extends Entity{
         return this.precoDiario;
     }
 
+    public double getPrecoDiario() {
+        return precoDiario;
+    }
+
+    public List<Jogo> getJogos() {
+        return jogos;
+    }
+
+    public List<Plataforma> getPlataformas() {
+        return plataformas;
+    }
+
+    public List<ItemLocacao> getLocacoes() {
+        return locacoes;
+    }
+
+    public void adicionarPlataforma(Plataforma plataforma){
+        this.plataformas.add(plataforma);
+        plataforma.adicionarReferenciaJogoPlataformaEmPlataforma(this);
+    }
+    
+    public void adicionarJogo(Jogo jogo){
+        this.jogos.add(jogo);
+        jogo.adicionarReferenciaJogoPlataformaEmJogo(this);
+    }
+    
     @Override
     public String toString() {
         return "JogoPlataforma{" + "id=" + this.getId() + ", precoDiario=" + precoDiario + ", jogos=" + jogos + ", plataformas=" + plataformas + ", locacoes=" + locacoes + '}';
-    }
-    // step builder
-    public static class Builder{
-        
-        private JogoPlataforma jogoPlataforma;
-        
-        public Builder(Integer id){
-            this.jogoPlataforma = new JogoPlataforma(id);
-        }
-        
-        public Builder jogos(List<Jogo> jogos){
-            this.jogoPlataforma.jogos = jogos;
-            return this;
-        }
-        
-        public Builder plataformas(List<Plataforma> plataformas){
-            this.jogoPlataforma.plataformas = plataformas;
-            return this;
-        }
-        
-        public Builder locacoes(List<ItemLocacao> locacoes){
-            this.jogoPlataforma.locacoes = locacoes;
-            return this;
-        }
-        
-        public JogoPlataforma build(){
-            return this.jogoPlataforma;
-        }
     }
     
 }

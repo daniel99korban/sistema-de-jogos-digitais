@@ -20,7 +20,7 @@ public class PlataformaPc extends Plataforma{
 
     @Override
     public String toString() {
-        return "PlataformaPc{id=" + super.getId()+", nome=" + super.getNome() + ", jogos="+ super.getJogos() +"}";
+        return "PlataformaPc{id=" + super.getId()+", nome=" + super.getNome() +"}";
     }
     
 }

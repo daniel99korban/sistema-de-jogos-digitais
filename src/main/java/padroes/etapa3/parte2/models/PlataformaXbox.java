@@ -21,7 +21,7 @@ public class PlataformaXbox extends Plataforma{
 
     @Override
     public String toString() {
-        return "PlataformaXbox{id=" + super.getId()+", nome=" + super.getNome() + ", jogos="+ super.getJogos() +"}";
+        return "PlataformaXbox{id=" + super.getId()+", nome=" + super.getNome() + "}";
     }
     
 }

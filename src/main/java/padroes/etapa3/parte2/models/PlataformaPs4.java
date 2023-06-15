@@ -21,7 +21,7 @@ public class PlataformaPs4 extends Plataforma{
 
     @Override
     public String toString() {
-        return "PlataformaPs4{id=" + super.getId()+", nome=" + super.getNome() + ", jogos="+ super.getJogos() +"}";
+        return "PlataformaPs4{id=" + super.getId()+", nome=" + super.getNome() +"}";
     }
     
 }
