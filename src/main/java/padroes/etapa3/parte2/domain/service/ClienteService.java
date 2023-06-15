@@ -1,5 +1,5 @@
 
-package padroes.etapa3.parte2.service;
+package padroes.etapa3.parte2.domain.service;
 
 import java.util.List;
 import padroes.etapa3.parte2.domain.model.Entity;
@@ -13,8 +13,8 @@ public class ClienteService {// camada servico
     
     private final ClienteRepository clienteRepository;
     // injeção
-    public ClienteService(ClienteRepository clienteRepository) {
-        this.clienteRepository = clienteRepository;
+    public ClienteService() {
+        this.clienteRepository = new ClienteRepository();
     }
     
     public List<Entity> listarTodos(){

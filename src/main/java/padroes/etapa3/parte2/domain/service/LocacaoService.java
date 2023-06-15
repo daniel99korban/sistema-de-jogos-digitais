@@ -1,5 +1,5 @@
 
-package padroes.etapa3.parte2.service;
+package padroes.etapa3.parte2.domain.service;
 
 import java.util.List;
 import padroes.etapa3.parte2.domain.model.Entity;
