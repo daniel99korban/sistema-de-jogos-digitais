@@ -9,17 +9,19 @@ import padroes.etapa3.parte2.domain.model.Plataforma;
 import padroes.etapa3.parte2.domain.model.PlataformaPc;
 import padroes.etapa3.parte2.domain.model.PlataformaPs4;
 import padroes.etapa3.parte2.domain.model.PlataformaXbox;
+import padroes.etapa3.parte2.domain.repository.conexao.ConexaoBDSimulada;
 
 /**
  *
  * @author 62040614370
  */
 public class PlataformaRepository extends Repository{
+    
     @Override
     public List<Entity> buscarTodos() {
         List<Entity> plataformas = new ArrayList<>();
          // Iterando sobre os elementos para obter apenas as plataformas
-        for (Map.Entry<Integer, Entity> registros : super.conexao.entrySet()) {
+        for (Map.Entry<Integer, Entity> registros : conexao.entrySet()) {
             if(
                 registros.getValue() instanceof PlataformaPc ||
                 registros.getValue() instanceof PlataformaXbox ||
@@ -33,7 +35,7 @@ public class PlataformaRepository extends Repository{
 
     @Override
     public Entity recuperar(int id) {
-        for(Map.Entry<Integer,Entity> registro : super.conexao.entrySet()) {
+        for(Map.Entry<Integer,Entity> registro : conexao.entrySet()) {
            if(
                 registro.getValue() instanceof PlataformaPc ||
                 registro.getValue() instanceof PlataformaXbox ||
@@ -48,19 +50,19 @@ public class PlataformaRepository extends Repository{
 
     @Override
     public void cadastrar(Entity entity) {
-        super.conexao.put(entity.getId(),entity);
+        conexao.put(entity.getId(),entity);
     }
 
     @Override
     public void atualizar(Entity entity) {
-        for(Map.Entry<Integer,Entity> registro : super.conexao.entrySet()) {
+        for(Map.Entry<Integer,Entity> registro : conexao.entrySet()) {
           if(
                 registro.getValue() instanceof PlataformaPc ||
                 registro.getValue() instanceof PlataformaXbox ||
                 registro.getValue()instanceof PlataformaPs4 && 
                 registro.getValue().getId() == entity.getId()
             ){
-              super.conexao.put(registro.getValue().getId(), entity);
+              conexao.put(registro.getValue().getId(), entity);
           }
         }
     }
@@ -68,14 +70,14 @@ public class PlataformaRepository extends Repository{
     @Override
     public void excluirPorNome(Entity entity) {
         Plataforma plataforma = (Plataforma) entity;
-        for(Map.Entry<Integer,Entity> registro : super.conexao.entrySet()) {
+        for(Map.Entry<Integer,Entity> registro : conexao.entrySet()) {
             if( registro.getValue() instanceof PlataformaPc ||
                 registro.getValue() instanceof PlataformaXbox ||
                 registro.getValue()instanceof PlataformaPs4)
             {
                 Plataforma plataformaExcluida = (Plataforma) registro.getValue();
                 if(plataformaExcluida.getNome().equals(plataforma.getNome())){
-                    super.conexao.remove(registro);
+                    conexao.remove(registro);
                     break;
                 }
             }
@@ -84,14 +86,14 @@ public class PlataformaRepository extends Repository{
 
     @Override
     public void excluirPorId(int id) {
-        for(Map.Entry<Integer,Entity> registro : super.conexao.entrySet()) {
+        for(Map.Entry<Integer,Entity> registro : conexao.entrySet()) {
             if(
                 registro.getValue() instanceof PlataformaPc ||
                 registro.getValue() instanceof PlataformaXbox ||
                 registro.getValue()instanceof PlataformaPs4
                 && registro.getValue().getId() == id)
             {
-                super.conexao.remove(registro);
+                conexao.remove(registro);
                 break;
             }
         }

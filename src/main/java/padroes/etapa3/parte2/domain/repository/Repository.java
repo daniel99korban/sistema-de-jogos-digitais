@@ -12,7 +12,18 @@ import padroes.etapa3.parte2.domain.repository.conexao.ConexaoBDSimulada;
  */
 public abstract class Repository{
     
-    protected Map<Integer,Entity> conexao = ConexaoBDSimulada.getConection();
+    protected Map<Integer, Entity> conexao;
+
+    public Repository() {
+        ConexaoBDSimulada conBD = ConexaoBDSimulada.getInstance();
+        conexao = conBD.getConection();
+    }
+    
+    public void exibirRegistros() {
+        for (Map.Entry<Integer, Entity> registro : conexao.entrySet()) {
+            System.out.println(registro.getValue());
+        }
+    }
     
     public abstract List<Entity> buscarTodos();
     public abstract Entity recuperar(int id);
