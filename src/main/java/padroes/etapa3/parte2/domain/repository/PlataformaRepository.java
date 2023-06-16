@@ -9,11 +9,10 @@ import padroes.etapa3.parte2.domain.model.Plataforma;
 import padroes.etapa3.parte2.domain.model.PlataformaPc;
 import padroes.etapa3.parte2.domain.model.PlataformaPs4;
 import padroes.etapa3.parte2.domain.model.PlataformaXbox;
-import padroes.etapa3.parte2.domain.repository.conexao.ConexaoBDSimulada;
 
 /**
  *
- * @author 62040614370
+ * @author daniel & Pedro Ivo
  */
 public class PlataformaRepository extends Repository{
     

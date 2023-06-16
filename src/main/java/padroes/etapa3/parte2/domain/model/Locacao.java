@@ -33,7 +33,7 @@ public class Locacao extends Entity{
         itemLocacao.adicionarReferenciaLocacaoEmItemLocacao(this);
     }
     
-    public void adicionarReferenciaItemLocacaoEmLocacao(ItemLocacao itemLocacao){
+    protected void adicionarReferenciaItemLocacaoEmLocacao(ItemLocacao itemLocacao){
         this.itens.add(itemLocacao);
     }
     

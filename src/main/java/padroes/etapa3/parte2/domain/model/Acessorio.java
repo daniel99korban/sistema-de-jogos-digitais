@@ -3,7 +3,7 @@ package padroes.etapa3.parte2.domain.model;
 
 /**
  *
- * @author danie
+ * @author daniel korban & pedro Ivo
  */
 public class Acessorio extends Entity{
     
@@ -17,6 +17,10 @@ public class Acessorio extends Entity{
     @Override
     public String toString() {
         return "Acessorio{" + "id=" + this.getId() + ", nome=" + nome + ", console=" + console + '}';
+    }
+    
+    public void adicionarReferenciaConsoleEmAcessorio(Console console){
+        this.console = console;
     }
     
 }

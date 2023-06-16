@@ -54,11 +54,11 @@ public class JogoPlataforma extends Entity{
         jogo.adicionarReferenciaJogoPlataformaEmJogo(this);
     }
     // metodo usado apenas para indicar relacionamento entro os objetos
-    public void adicionarReferenciaItemLocacaoEmJogoPlataforma(ItemLocacao itemLocacao){
+    protected void adicionarReferenciaItemLocacaoEmJogoPlataforma(ItemLocacao itemLocacao){
         this.locacoes.add(itemLocacao);
     }
     
-    public void adicionarItemLocacao(ItemLocacao itemLocacao){
+    protected void adicionarItemLocacao(ItemLocacao itemLocacao){
         this.locacoes.add(itemLocacao);
         itemLocacao.adicionarReferenciaJogoPlataformaEmItemLocacao(this);
     }

@@ -13,6 +13,7 @@ public abstract class Plataforma extends Entity{//(Xbox, PS3, PS4, PC, etc.).
     
     private String nome;
     private List<JogoPlataforma> jogoPlataforma;
+    
 
     protected Plataforma(Integer id) {
         super(id);
@@ -42,7 +43,6 @@ public abstract class Plataforma extends Entity{//(Xbox, PS3, PS4, PC, etc.).
         this.jogoPlataforma.add(jogoPlataforma);
     }
 
-    
     public abstract BigDecimal precoDiario();
     
     public static class Builder{

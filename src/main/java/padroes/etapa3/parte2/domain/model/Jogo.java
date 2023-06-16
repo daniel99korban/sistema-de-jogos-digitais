@@ -28,7 +28,7 @@ public class Jogo extends Entity{
         jogoPlataforma.adicionarJogo(this);
     }
     
-    public void adicionarReferenciaJogoPlataformaEmJogo(JogoPlataforma jogoPlataforma) {
+    protected void adicionarReferenciaJogoPlataformaEmJogo(JogoPlataforma jogoPlataforma) {
         this.jogoPlataforma.add(jogoPlataforma);
     }    
     

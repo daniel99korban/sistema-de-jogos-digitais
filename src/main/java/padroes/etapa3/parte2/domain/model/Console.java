@@ -2,6 +2,7 @@
 package padroes.etapa3.parte2.domain.model;
 
 import java.math.BigDecimal;
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -15,13 +16,11 @@ public class Console extends Entity{
     private List<Acessorio> acessorios;
     private List<UtilizacaoDoConsolePeloCliente> utilizacoes;
 
-    /**
-     *
-     * @param acessorios
-     */
-    public Console(Integer id, List<Acessorio> acessorios) {
+  
+    public Console(Integer id) {
         super(id);
-        this.acessorios = acessorios;
+        this.acessorios = new ArrayList<>();
+        this.utilizacoes = new ArrayList<>();
     }
     // getters e setters
     public String getNome() {
@@ -43,10 +42,13 @@ public class Console extends Entity{
     public List<Acessorio> getAcessorios() {
         return acessorios;
     }
-
-    public void setAcessorios(List<Acessorio> acessorios) {
-        this.acessorios = acessorios;
+    
+    
+    public void adicionarAcessorio(Acessorio acessorio) {
+        this.acessorios.add(acessorio);
+        acessorio.adicionarReferenciaConsoleEmAcessorio(this);
     }
+
 
     public List<UtilizacaoDoConsolePeloCliente> getUtilizacoes() {
         return utilizacoes;
@@ -67,5 +69,23 @@ public class Console extends Entity{
     }
     
     // step builder
-    
+    public static class Builder{
+        
+        private Console console;
+        
+        public Builder nome(String nome) {
+            this.console.setNome(nome);
+            return this;
+        }
+
+        public Builder precoPorHora(BigDecimal precoPorHora) {
+            this.console.setPrecoPorHora(precoPorHora);
+            return this;
+        }
+        
+        public Console buid(){
+            return this.console;
+        }
+        
+    }
 }
